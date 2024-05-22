@@ -27,8 +27,8 @@ function Dashboard() {
             Add Category
           </button>
         </div>
-        <div className="bg-[#F0F8FF]">
-          <div className="flex items-center gap-[2em] border-b-black">
+        <div className="bg-[#F0F8FF] p-[2em]">
+          <div className="flex justify-evenly items-center gap-[4em] border-b-black">
             {" "}
             <label className="w-[40px] h-[40px] bg-[#fff] border rounded p-[.5em]">
               <input
@@ -38,14 +38,18 @@ function Dashboard() {
             </label>
             <h2 className="font-bold text-[2em]"> All Contacts</h2>
           </div>
-          <div>
+          <div className="flex gap-[2em] my-[1em]"> 
           <label className="w-[40px] h-[40px] bg-[#fff] border rounded p-[.5em]">
               <input
                 className="outline-none text-[1em] bg-[#4070F4] text-center"
                 type="checkbox"
               />
             </label>
-            <p className="rounded-full p-[.5em] bg-[#4070F4]">AL</p>
+            <p className="rounded-full p-[.5em] bg-[#4070F4] text-white w-fit">AL</p>
+            <div>
+            <p>Abdul Latif</p>
+            <p className="text-[gray]">latif@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>
