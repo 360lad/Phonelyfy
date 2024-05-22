@@ -1,7 +1,7 @@
 
 function Nav(){
     return(
- <div className="flex justify-between items-center p-[2em] text-[#4070F4] bg-[#F0F8FF] ">
+ <div className="sticky flex justify-between items-center p-[2em] text-[#4070F4] bg-[#F0F8FF] ">
 <div className="w-[60px] h-[60px]">
 <img src="src/assests/telephone-logo-2.png" alt="" /></div>
 <div>
