@@ -1,7 +1,7 @@
 function Dashboard() {
   return (
     <div className="">
-      <div className="bg-[#F0F8FF] flex justify-evenly items-center rounded m-[2em] gap-[1em] p-[1em] ">
+      <div className="bg-[#F0F8FF] flex justify-evenly items-center rounded m-[2em] gap-[1em] p-[1em] sm: w-50 ">
         <span className="border rounded-full p-[.5em] bg-[#4070F4] text-white">
           AL
         </span>
@@ -18,7 +18,7 @@ function Dashboard() {
         </button>
       </div>
       <div className="flex">
-        <div className="bg-[#4070F4] text-white rounded w-fit p-[2em] m-[2em]">
+        <div className="hidden bg-[#4070F4] text-white rounded w-fit p-[2em] m-[2em] sm:block">
           <h2 className="font-bold text-[1em]">Filter by Category</h2>
           <p>Family</p>
           <p>Friends</p>
@@ -27,19 +27,19 @@ function Dashboard() {
             Add Category
           </button>
         </div>
-        <div className="bg-[#F0F8FF] p-[2em]">
+        <div className="bg-[#F0F8FF] p-[2em] sm: block mx-auto w-fit ">
           <div className="flex justify-evenly items-center gap-[4em] border-b-black">
             {" "}
-            <label className="w-[40px] h-[40px] bg-[#fff] border rounded p-[.5em]">
+            <label className="w-[30px] h-[30px] bg-[#fff] border rounded flex items-center p-[.5em]">
               <input
-                className="outline-none text-[1em] bg-[#4070F4] text-center"
+                className="outline-none border-none text-[1em] bg-[#4070F4] text-center"
                 type="checkbox"
               />
             </label>
             <h2 className="font-bold text-[2em]"> All Contacts</h2>
           </div>
           <div className="flex gap-[2em] my-[1em]"> 
-          <label className="w-[40px] h-[40px] bg-[#fff] border rounded p-[.5em]">
+          <label className="w-[30px] h-[30px] bg-[#fff] border rounded flex items-center p-[.5em]">
               <input
                 className="outline-none text-[1em] bg-[#4070F4] text-center"
                 type="checkbox"
