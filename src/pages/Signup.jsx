@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Signin from "./Signin";
+
+
 function Signup() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [errorMessage, setErrorMessage] = useState();
+  const navigate = useNavigate();
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -20,7 +23,7 @@ function Signup() {
     if (!formData.confirmPassword || formData.confirmPassword === "") {
       errors.confirmPassword = "Please Enter the Correct Password";
     }
-    if (formData.password != formData.confirmPassword) {
+    if (formData.password != formData.confirmPassword){
       errors.confirmPassword = "Fill in the correct password";
     }
 
@@ -37,15 +40,16 @@ function Signup() {
       const response = await fetch(url, options);
       const data = await response.json().catch(error);
       console.log(data);
-      console.log(error);
-      if (!data.ok) {
-        console.log(data);
+
+      if (!response.ok) {
+        console.log(data.message);
         setErrorMessage(data.message);
+               
+
+      }else{
+        navigate("/signin");
       }
-      else{
-    const navigate= useNavigate()
-    navigate("/signin")
-      }
+      
     }
   }
 
@@ -53,7 +57,7 @@ function Signup() {
     <div className=" mx-auto border rounded flex flex-col justify-evenly items-center w-[350px] p-[1em] bg-white m-[2em]">
       <h1 className="font-extrabold text-[2em] text-center">Sign up</h1>
       <div className="flex flex-col w-[300px] gap-[1em]">
-        <p className="text-red-500 font-bold">{errorMessage}</p>
+        <p className="text-red-500 font-bold">{errorMessage && errorMessage}</p>
         <p className="text-red-500 font-bold">
           {error && error.email && error.email}
         </p>
