@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { PhonelifyContext } from "../context/state";
 function Nav() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const {currentUser, setCurrentUser} = useContext(PhonelifyContext)
+  const navigate=useNavigate();
 
-  if (currentUser) {
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    user && setCurrentUser(user);
+    console.log(currentUser);
+  }, []);
+
+  function handleLogOut(e){
+    localStorage.removeItem("user");
+    setCurrentUser(null)
     
+    navigate("/")
+    window.location.reload()
+
   }
+
   return (
     <div className="sticky flex justify-between items-center p-[2em] text-[#4070F4] bg-[#F0F8FF] ">
       <div className="w-[60px] h-[60px]">
@@ -16,17 +31,29 @@ function Nav() {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/dashboard">
+         
+          
+          {currentUser && currentUser ? (
+            <div className="flex gap-4">
+               <Link to="/dashboard">
             {" "}
-            <li>Pricing</li>
-          </Link>
-          <Link to="/signin">
-            {" "}
-            <li>Sign in</li>
-          </Link>
-          <Link to="/signup">
-            <li>Sign up</li>
-          </Link>
+            <li>Dashboard</li>
+          </Link>         
+            <Link to="/">
+              {" "}
+              <li onClick={(e)=>{handleLogOut(e)}}>Log Out</li>
+            </Link>
+            </div>
+          ) : (
+            <div className="flex gap-4">
+              <Link to="/signup">
+                <li>Sign up</li>
+              </Link>
+              <Link to="/signin">
+                <li>Sign in</li>
+              </Link>
+            </div>
+          )}
         </ul>
       </div>
     </div>

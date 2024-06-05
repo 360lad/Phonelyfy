@@ -1,13 +1,12 @@
 // import './App.css'
-import Router from "./components/Router"
+import Router from "./components/Router";
+import PhonelifyContextProvider from "./context/state";
 function App() {
   return (
-  
-     <div>
+    <PhonelifyContextProvider>
       <Router />
-      </div>
-    
-  )
+    </PhonelifyContextProvider>
+  );
 }
 
-export default App
+export default App;

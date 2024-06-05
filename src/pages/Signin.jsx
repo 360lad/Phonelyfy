@@ -37,6 +37,8 @@ function Signin() {
 
           localStorage.setItem("user", JSON.stringify(data));
           navigate("/dashboard");
+          window.location.reload()
+
 
         }
          else {
