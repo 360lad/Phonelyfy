@@ -5,12 +5,7 @@ import { PhonelifyContext } from "../context/state";
 function Nav() {
   const {currentUser, setCurrentUser} = useContext(PhonelifyContext)
   const navigate=useNavigate();
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    user && setCurrentUser(user);
-    console.log(currentUser);
-  }, []);
+console.log(currentUser)
 
   function handleLogOut(e){
     localStorage.removeItem("user");

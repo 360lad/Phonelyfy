@@ -1,4 +1,6 @@
+
 function Dashboard() {
+ 
   return (
     <div className="">
       <div className="bg-[#F0F8FF] flex justify-evenly items-center rounded m-[2em] gap-[1em] p-[1em] sm: w-50 ">
@@ -15,6 +17,10 @@ function Dashboard() {
         <button className="bg-[#4070F4] text-white rounded p-[.5em]">
           {" "}
           +Create
+        </button>
+        <button className="bg-[#4070F4] text-white rounded p-[.5em]">
+          {" "}
+          Manage Category
         </button>
       </div>
       <div className="flex">
