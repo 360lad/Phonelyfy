@@ -1,5 +1,17 @@
-
+import { useState } from "react";
+import Managecategory from "../components/managecategory";
 function Dashboard() {
+  
+  function handleManageCategory(){
+    const [handleCategory,setHandleCategory]=useState(false)
+
+    const togglePopUp=()=>{
+
+      setHandleCategory(handleCategory)
+    }
+
+    }
+  
  
   return (
     <div className="">
@@ -18,10 +30,15 @@ function Dashboard() {
           {" "}
           +Create
         </button>
-        <button className="bg-[#4070F4] text-white rounded p-[.5em]">
+        {handleManageCategory &&  (
+        <button className="bg-[#4070F4] text-white rounded p-[.5em]" onClick={togglePopUp()}>
+          
           {" "}
           Manage Category
         </button>
+)}
+        
+        
       </div>
       <div className="flex">
         <div className="hidden bg-[#4070F4] text-white rounded w-fit p-[2em] m-[2em] sm:block">
