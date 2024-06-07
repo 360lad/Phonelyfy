@@ -48,9 +48,10 @@ function Dashboard() {
       <div className="flex">
         <div className="hidden bg-[#4070F4] text-white rounded w-fit p-[2em] m-[2em] sm:block">
           <h2 className="font-bold text-[1em]">Filter by Category</h2>
-          <p>Family</p>
-          <p>Friends</p>
-          <p>Work Mates</p>
+          <ul>
+            {}
+            <li></li>
+          </ul>
           <button
             className="bg-white text-[#4070F4] rounded p-[.3em] m-[1em]"
             onClick={handleAddCategory}
@@ -62,6 +63,8 @@ function Dashboard() {
           <Addcategory
             showAddCategory={showAddCategory}
             setShowAddCategory={setShowAddCategory}
+            categories={categories}
+            setCategories={setCategories}
           />
         }
         <div className="bg-[#F0F8FF] p-[2em] sm: block mx-auto w-fit ">
